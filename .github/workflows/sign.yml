@@ -37,3 +37,4 @@ jobs:
           git add resources/sign.webp
           git commit -m "The servers have been updated✔ - $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
           git pull --rebase origin master
+          git push origin master
