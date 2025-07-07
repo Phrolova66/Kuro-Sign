@@ -72,9 +72,9 @@ export class App {
         data.tasks.push({ remark, msg: '✅已完成' })
       }
       // 6. 查询总库洛币
-      const data = await KuroApi.getData('totalGold')
+      const totalGold = await KuroApi.getData('totalGold')
       data.dailyGold = maxDailyGold || 0
-      data.totalGold = data?.data?.goldNum || 0
+      data.totalGold = totalGold?.data?.goldNum || 0
       return data
     } catch (error) {
       console.error('执行出错:', error.message)
