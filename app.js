@@ -26,6 +26,9 @@ export class App {
         console.error(`[${ mine.code }]: ${ mine.msg }`)
         return
       }
+      if (dailyTask.every(task => task.process === 1)) {
+        return
+      }
       // 帖子列表
       const forumList = await KuroApi.getData('forumList', {
         forumId: 9,
@@ -54,7 +57,7 @@ export class App {
       // 执行任务
       for (const task of dailyTask) {
         const { remark, process, needActionTimes, completeTimes } = task
-        if (process >= 1.0) {
+        if (process === 1) {
           data.tasks.push({ remark, msg: '✅已完成' })
           continue // 已完成，跳过
         }
@@ -144,7 +147,7 @@ export class App {
           game.serverName = '战双帕弥什'
           const monthData = await KuroApi.getData('month', { roleId: game.roleId })
           game.monthData = await common.monthData(monthData?.data)
-          game.bossData = await common.bossData(game.bossData)
+          game.bossData = await common.bossData(game.bossData, true)
         } else {
           let params = {
             gameId: game.gameId,
