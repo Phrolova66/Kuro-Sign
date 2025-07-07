@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "tttgbnumber";
+    src: url(fonts/tttgbnumber.ttf) format("truetype");
+}
+
+.font-YS {
+    font-family: Number, "汉仪文黑-65W", YS, PingFangSC-Medium, "PingFang SC", sans-serif;
+}
+
+.font-NZBZ {
+    font-family: Number, "印品南征北战NZBZ体", NZBZ, "汉仪文黑-65W", YS, PingFangSC-Medium, "PingFang SC", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+body {
+    width: 1200px;
+    font-family: 'tttgbnumber', Number, "汉仪文黑-65W", YS, PingFangSC-Medium, "PingFang SC", sans-serif;
+    transform: scale(1.4);
+    transform-origin: 0 0;
+}

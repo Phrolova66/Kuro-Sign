@@ -1,0 +1,105 @@
+{{ extend defaultLayout }}
+
+{{ block 'css' }}
+<link rel="stylesheet" type="text/css" href="{{resPath}}sign.css"/>
+{{/block}}
+
+{{ block 'main' }}
+<div class="forum" style="background-image: url({{resPath}}{{bg}});">
+    <div class="acg image" style="background-image: url({{resPath}}{{acg}})"></div>
+    <div class="top-bar">
+        <div class="logo icon" style="background-image: url({{resPath}}{{logo}})"></div>
+        <div class="game-name">库洛游戏</div>
+    </div>
+    <div class="sign">咕咕咕....</div>
+</div>
+<div class="games">
+    {{ each games  game }}
+    <div class="main">
+        <!-- 顶部栏 -->
+        <div class="top-bar">
+            <div class="logo icon" style="background-image: url({{resPath}}{{game.logo}})"></div>
+            <span class="game-name">{{ game.serverName }}</span>
+        </div>
+        <!-- 主数据界面（默认显示） -->
+        <div class="bg-white-round">
+            <div class="daily">
+                {{ each game.dailyData daily }}
+                <div class="section">
+                    <div class="icon" style="background-image: url({{daily.img}})"></div>
+                    <div class="info">
+                        {{ if daily.status === 1 }}
+                        <div>未解锁</div>
+                        {{else}}
+                        <div class="row">
+                            <span class="cur">{{ daily.cur }}</span>
+                            <span>/ {{ daily.total }}</span>
+                        </div>
+                        {{/if}}
+                        <span>{{ daily.name }}</span>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div class="weekly">
+                {{ if game.isGr }}
+                <div class="table title">
+                    <div>名称</div>
+                    <div>当前资源</div>
+                    <div>{{ game.monthData.currentMonth }}月资源</div>
+                </div>
+                {{ each game.monthData.detail m }}
+                <div class="table">
+                    <div>{{ m.name }}</div>
+                    <div>{{ m.cur }}</div>
+                    <div>{{ m.month }}</div>
+                </div>
+                {{/each}}
+                {{else}}
+                {{ each game.weeklyData weekly }}
+                <div class="active-table">
+                    <div class="active-icon icon" style="background-image: url({{resPath}}{{weekly.img}});"></div>
+                    <div class="active-text">
+                        <div class="active">
+                            <div>
+                                <span>{{ weekly.name }}</span>
+                                <span class="{{ weekly.show ? '' : 'hidden' }}">Lv.{{ weekly.level }}</span>
+                            </div>
+                            <div>
+                                {{ if weekly.status === 1 }}
+                                <span>未解锁</span>
+                                {{else}}
+                                <span>{{ weekly.tips }}</span>
+                                <span>{{ weekly.cur }} / {{ weekly.total }}</span>
+                                {{/if}}
+                            </div>
+                        </div>
+                        <div id="progress" class="{{ weekly.show ? '' : 'hidden' }}" {{@weekly.score}}></div>
+                    </div>
+                </div>
+                {{/each}}
+                {{/if}}
+            </div>
+            <!-- 整体容器 -->
+            <div class="footer">
+                {{ each game.bossData boss }}
+                <div class="boss_data image" style="background-image: url({{resPath}}{{boss.img}})">
+                    <div class="boss-icon icon" style="background-image: url({{ game.isGr ? boss.icon : resPath + boss.icon }})"></div>
+                    <div class="boss">
+                        <div class="boss-name">{{ boss.name }}</div>
+                        <div class="boss-text">
+                            {{ if boss.status === 1 }}
+                            未解锁
+                            {{else}}
+                            {{ boss.cur }}/{{ boss.total }}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/block}}

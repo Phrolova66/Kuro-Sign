@@ -1,0 +1,18 @@
+{
+  "name": "kuro-sign",
+  "description": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "app": "node ."
+  },
+  "dependencies": {
+    "art-template": "4.13.4",
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^24.11.2"
+  },
+  "imports": {
+    "#mao": "./lib/index.js"
+  }
+}

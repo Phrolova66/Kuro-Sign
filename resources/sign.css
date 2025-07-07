@@ -1,0 +1,198 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.forum {
+    width: 1200px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.acg {
+    position: absolute;
+    right: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+
+.sign {
+    padding: 10px;
+    font-size: 30px;
+}
+
+
+.games {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+.main {
+    background: url(images/bg.webp) no-repeat;
+    width: 598px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 可选阴影效果 */
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hidden {
+    display: none;
+}
+
+.top-bar {
+    height: 70px;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    align-items: flex-end;
+    border-radius: 10px 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(25, 25, 25, 0.3), rgba(25, 25, 25, 0), rgba(25, 25, 25, 0));
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin: auto 0 auto 5px;
+    border-radius: 50% 50%;
+}
+
+.game-name {
+    font-size: 25px;
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
+
+.bg-white-round {
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.daily {
+    padding: 5px;
+    width: 95%;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.section {
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    font-weight: bold;
+    .cur {
+        color: #ff0d70bd;
+    }
+}
+
+.active-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+}
+
+.active-text {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    width: 80%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.active-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.active {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weekly {
+    height: 200px;
+}
+
+#progress {
+    margin-top: 10px;
+    width: 100%;
+    height: 8px;
+    mask: linear-gradient(90deg, #000 60%, #0000 0) 0/1%;
+}
+
+.table {
+    display: grid;
+    padding: 11px;
+    font-weight: bold;
+    grid-template-columns: repeat(3, 2fr);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-top: 5px
+}
+
+.boss_data {
+    width: 49%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+}
+
+.boss {
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boss-name {
+    font-weight: bold;
+    color: #F6F6F6;
+}
+
+.boss-text {
+    font-size: 16px;
+    color: #c9c9c9;
+}
+
+.boss-icon {
+    width: 60px;
+    height: 60px;
+}
