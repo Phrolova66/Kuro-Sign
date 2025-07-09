@@ -151,7 +151,8 @@
 
 .table {
     display: grid;
-    padding: 11px;
+    align-items: center;
+    padding: 12px;
     font-weight: bold;
     grid-template-columns: repeat(3, 2fr);
 }
