@@ -152,7 +152,7 @@
 .table {
     display: grid;
     align-items: center;
-    padding: 12px;
+    height: 53px;
     font-weight: bold;
     grid-template-columns: repeat(3, 2fr);
 }
